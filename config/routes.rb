@@ -53,4 +53,8 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # Receive Event and Parse Webhook from SendGrid
+  mount Event::API => '/EventReceiver'
+  mount Parse::API => '/ParseReceiver'
 end
