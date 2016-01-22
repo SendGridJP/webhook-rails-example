@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  post 'parse_controller/handle_post'
+  post 'events_controller/handle_post'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -54,7 +57,4 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  # Receive Event and Parse Webhook from SendGrid
-  mount Event::API => '/EventReceiver'
-  mount Parse::API => '/ParseReceiver'
 end
